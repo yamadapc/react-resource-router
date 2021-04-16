@@ -26,6 +26,7 @@ const mockSlice = {
   key: 'i-am-a-key',
   promise: Promise.resolve(),
   expiresAt: 0,
+  isCacheHit: true,
 };
 const mockData = 'some-data';
 const getDataPromise = Promise.resolve(mockData);

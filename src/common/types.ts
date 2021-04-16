@@ -83,6 +83,7 @@ export type RouteResourceResponseBase<RouteResourceData> = {
   key?: string;
   promise?: RouteResourcePromise<RouteResourceData>;
   expiresAt: RouteResourceTimestamp;
+  isCacheHit: boolean;
 };
 
 export type RouteResourceResponseLoading<RouteResourceData> = {

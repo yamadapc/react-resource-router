@@ -11,9 +11,9 @@ import { useRouterStoreStatic, RouterStore } from '../../router-store';
 import { EntireRouterState, AllRouterActions } from '../../router-store/types';
 import { createHook } from 'react-sweet-state';
 
-type UseResourceHookResponse<RouteResourceData> = RouteResourceResponse<
+type UseResourceHookResponse<
   RouteResourceData
-> & {
+> = RouteResourceResponse<RouteResourceData> & {
   update: (getNewData: RouteResourceUpdater<RouteResourceData>) => void;
   refresh: () => void;
 };

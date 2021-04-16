@@ -27,6 +27,7 @@ describe('ResourceSubscriber', () => {
     loading: false,
     promise: Promise.resolve(),
     expiresAt: 100,
+    isCacheHit: false,
   };
   let resourceStore;
   let storeState: any;
@@ -152,6 +153,7 @@ describe('ResourceSubscriber', () => {
       expect(storeData.data[type][key]).toEqual({
         ...mockSlice,
         data: newData,
+        isCacheHit: true,
       });
     });
 
@@ -190,6 +192,7 @@ describe('ResourceSubscriber', () => {
       expect(storeData.data[type][key]).toEqual({
         ...mockSlice,
         data: newData,
+        isCacheHit: true,
       });
     });
   });

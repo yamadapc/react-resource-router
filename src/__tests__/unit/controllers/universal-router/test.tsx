@@ -188,6 +188,7 @@ describe('UniversalRouter', () => {
               data: 'goodbye cruel world',
               error: null,
               loading: false,
+              isCacheHit: false,
               promise: null,
               expiresAt,
             },
@@ -196,6 +197,7 @@ describe('UniversalRouter', () => {
             key: {
               data: 'hello world',
               error: null,
+              isCacheHit: false,
               loading: false,
               promise: null,
               expiresAt,
@@ -219,6 +221,7 @@ describe('UniversalRouter', () => {
               loading: false,
               promise: null,
               expiresAt,
+              isCacheHit: false,
             },
           },
           HI: {
@@ -228,6 +231,7 @@ describe('UniversalRouter', () => {
               loading: false,
               promise: null,
               expiresAt,
+              isCacheHit: false,
             },
           },
         };

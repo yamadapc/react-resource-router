@@ -8,4 +8,5 @@ export const BASE_DEFAULT_STATE_SLICE = {
   error: null,
   loading: false,
   promise: null,
+  isCacheHit: false,
 };

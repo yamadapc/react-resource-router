@@ -106,6 +106,7 @@ describe('resource store', () => {
           data: result,
           error,
           loading: false,
+          isCacheHit: false,
           promise: getDataPromise,
           expiresAt,
         });
@@ -129,6 +130,7 @@ describe('resource store', () => {
               [key]: {
                 data: result,
                 loading: false,
+                isCacheHit: false,
                 error,
                 promise: getDataPromise,
                 expiresAt,
@@ -155,6 +157,7 @@ describe('resource store', () => {
           [key]: {
             data: result,
             loading: false,
+            isCacheHit: false,
             error,
             promise: getDataPromise,
             expiresAt,
@@ -180,6 +183,7 @@ describe('resource store', () => {
               [key]: {
                 data: null,
                 loading: true,
+                isCacheHit: false,
                 error,
                 promise: getDataPromise,
                 expiresAt,
@@ -194,6 +198,7 @@ describe('resource store', () => {
               [key]: {
                 data: result,
                 loading: false,
+                isCacheHit: false,
                 error,
                 promise: getDataPromise,
                 expiresAt,
@@ -330,6 +335,7 @@ describe('resource store', () => {
             BYE: {
               key: {
                 data: 'goodbye cruel world',
+                isCacheHit: false,
                 error: null,
                 loading: false,
                 promise: resolver('hello world'),
@@ -339,6 +345,7 @@ describe('resource store', () => {
             HI: {
               key: {
                 data: 'hello world',
+                isCacheHit: false,
                 error: null,
                 loading: false,
                 promise: resolver('goodbye cruel world'),
@@ -471,6 +478,7 @@ describe('resource store', () => {
             data: null,
             error: serializeError(new Error(message)),
             loading: false,
+            isCacheHit: false,
             promise: null,
             expiresAt: null,
           },
@@ -511,6 +519,7 @@ describe('resource store', () => {
             data: null,
             error: serializeError(new CustomError(customErrorProps)),
             loading: false,
+            isCacheHit: false,
             promise: null,
             expiresAt: null,
           },
@@ -804,6 +813,7 @@ describe('resource store', () => {
           expiredResourceKey: {
             data: null,
             loading: false,
+            isCacheHit: false,
             error,
             promise: getDataPromise,
             expiresAt: currentTime,

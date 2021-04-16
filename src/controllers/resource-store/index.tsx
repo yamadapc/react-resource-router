@@ -66,6 +66,7 @@ export const actions: Actions = {
       actions.setResourceState(type, key, {
         ...slice,
         data: getNewSliceData(slice.data),
+        isCacheHit: maxAge > 0 ? true : false,
         expiresAt: getExpiresAt(maxAge),
       })
     );
@@ -195,6 +196,7 @@ export const actions: Actions = {
             ...slice,
             data: null,
             error: null,
+            isCacheHit: false,
             expiresAt: getExpiresAt(0),
           })
         );
@@ -262,6 +264,7 @@ export const actions: Actions = {
       key,
       promise: null,
       expiresAt: null,
+      isCacheHit: false,
       error: !error
         ? null
         : serializeError(
