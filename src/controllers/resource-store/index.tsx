@@ -66,7 +66,7 @@ export const actions: Actions = {
       actions.setResourceState(type, key, {
         ...slice,
         data: getNewSliceData(slice.data),
-        isCacheHit: maxAge > 0 ? true : false,
+        isCacheHit: maxAge > 0,
         expiresAt: getExpiresAt(maxAge),
       })
     );

@@ -26,7 +26,7 @@ const mockSlice = {
   key: 'i-am-a-key',
   promise: Promise.resolve(),
   expiresAt: 0,
-  isCacheHit: true,
+  isCacheHit: false,
 };
 const mockData = 'some-data';
 const getDataPromise = Promise.resolve(mockData);
@@ -136,6 +136,7 @@ describe('useResource hook', () => {
 
       expect(storeData.data[mockType][mockKey]).toEqual({
         ...mockSlice,
+        isCacheHit: true,
         expiresAt: 100,
         data: newData,
       });
@@ -161,6 +162,7 @@ describe('useResource hook', () => {
 
       expect(storeData.data[mockType][mockKey]).toEqual({
         ...mockSlice,
+        isCacheHit: true,
         expiresAt: 100,
         data: newData,
       });
