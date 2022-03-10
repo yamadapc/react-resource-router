@@ -30,12 +30,12 @@ const matchRoute = <T extends Route | InvariantRoute>(
       ? (qs.parse(queryParams) as Query)
       : queryParams;
 
-  const cachedMatch = matchRouteCache.get<T>(
-    pathname,
-    queryParamObject,
-    basePath
-  );
-  if (cachedMatch && routes.includes(cachedMatch.route)) return cachedMatch;
+  // const cachedMatch = matchRouteCache.get<T>(
+  //   pathname,
+  //   queryParamObject,
+  //   basePath
+  // );
+  // if (cachedMatch && routes.includes(cachedMatch.route)) return cachedMatch;
 
   for (let i = 0; i < routes.length; i++) {
     const matchedRoute = execRouteMatching(
